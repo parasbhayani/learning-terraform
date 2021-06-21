@@ -1,0 +1,5 @@
+#Ignore State file
+*.tfstate
+
+#Ignore locks
+*.terraform.lock.hcl
