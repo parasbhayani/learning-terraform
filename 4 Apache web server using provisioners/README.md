@@ -29,3 +29,31 @@
 1. *continue* - Ignore the error and continue with creation or destruction.
 
 2. *fail* - Raise an error and stop applying (the default behavior). If this is a creation provisioner, taint the resource.
+
+#
+
+## Terraform State
+
+- In our code we have two files, one main.tf & other setup.tf
+1. main.tf has the definition of the aws instance with the required params
+2. setup.tf this file has individual services required by main.tf, this type of modular approach makes the code easy to read and maintain
+
+- Terraform tracks the state of each of the resources deployed in a file called terraform.tfstate (.tfstate) file
+- This file can be stored locally for local usage or can be [stored over on cloud](https://www.terraform.io/docs/language/state/remote.html) like Amazon S3, Google Cloud storage etc. for collaboration by a team
+
+### Terraform state commands,
+
+1. terraform **state list**<br>
+This command lists the resources being tracked by the .tfstate state file, which is easier than opening the lenghty JSON inside the file
+
+2. terraform **state show** \<resource name\><br>
+This command lists out all the parameters of a particular resource being tracked in .tfstate file
+
+3. terraform **state rm** \<resource name\><br>
+If you want to remote the tracking of a resource by terraform after its creation, you can use *rm* so that whenever a destroy is ran, the removed resource is not destroyed or modified
+
+4. terraform **state pull**<br>
+If you want to pull up the local / remote state file in local
+
+5. terraform **state push**<br>
+If you want to push the local .tfstate configuration to a remote file
