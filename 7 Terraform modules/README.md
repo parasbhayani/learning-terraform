@@ -32,5 +32,11 @@ Highlighting point is how the referencing happens to the values derived from reu
     ami           = module.vpc.ami_id
     subnet_id     = module.vpc.subnet_id
     ```
+- You can use the command to format all code file and subfolders recursively for terraform,
 
+    > terraform fmt -recursive 
 
+- The usual terraform init, validate, plan & apply works here in the same manner
+- At the end it outputs the PrivateIP of the newly created AWS instance in the VPC created from the reusable module
+
+- You can delete the infrastructure using terraform destroy command
