@@ -13,7 +13,7 @@ But when it comes to a team working on the same project, you will require a solu
     1. We will pull a Nginx image from Docker and will create a Docker container locally and use Amazon S3 as backend to store our state file<br>
     This has been incorporated in the main.tf file
 
-    2. To set the remote backend for storing Terraform state, we would be using keyboard *backend* and mentioned in below snippet, and passing params like AWS profile, region, key(name of remote file object) and the S3 bucket where-in it will store the remote state<br>
+    2. To set the remote backend for storing Terraform state, we would be using keyword *backend* and mentioned in below snippet, and passing params like AWS profile, region, key(name of remote file object) and the S3 bucket where-in it will store the remote state<br>
     This is to included in file backend.tf
     P.S: These functionalities are available in Terraform version 0.13 & above hence we set the required version to be above that<br>
 
